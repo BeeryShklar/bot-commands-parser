@@ -1,0 +1,13 @@
+{
+	"name": "command-parser",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "node .",
+		"dev": "nodemon",
+		"test": ""
+	},
+	"author": "Beery Shklar",
+	"license": "ISC"
+}
