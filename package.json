@@ -3,11 +3,16 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "app.js",
+	"type": "module",
 	"scripts": {
 		"start": "node .",
 		"dev": "nodemon",
 		"test": ""
 	},
 	"author": "Beery Shklar",
-	"license": "ISC"
+	"license": "ISC",
+	"dependencies": {
+		"arcsecond": "^5.0.0",
+		"yaml": "^2.3.1"
+	}
 }

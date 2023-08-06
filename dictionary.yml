@@ -1,0 +1,221 @@
+###############
+### Parsing ###
+###############
+
+### COMMANDS ###
+# Language
+commands.change_language:
+  english: "change language to"
+  hebrew: "שנה שפה ל"
+commands.help:
+  english: "help"
+  hebrew: "עזרה"
+# Filters
+commands.add_filter:
+  english: "add filter"
+  hebrew: "הוסף פילטר"
+commands.remove_filter:
+  english: "remove filter"
+  hebrew: "הסר פילטר"
+commands.edit_filter:
+  english: "edit filter"
+  hebrew: "ערוך פילטר"
+commands.show_filters:
+  english: "show filters"
+  hebrew: "הצג פילטרים"
+# Tags
+# Birthdays
+# Permissions
+# Reminders
+commands.add_reminder:
+  english: "add reminder"
+  hebrew: "הוסף תזכורת"
+# Stickers
+# Internet
+# Miscellaneous
+# Admin
+
+### REMINDERS ###
+reminders.repeat:
+  english: "repeat"
+  hebrew: "חוזרת"
+
+### TYPES ###
+# General
+types.languages:
+  english:
+    english: "english"
+    hebrew: "hebrew"
+    french: "french"
+  hebrew:
+    english: "אנגלית"
+    hebrew: "עברית"
+    french: "צרפתית"
+types.toggle_state:
+  english:
+    true: "on"
+    false: "off"
+  hebrew:
+    true: "פועל"
+    false: "כבוי"
+types.weekdays:
+  hebrew:
+    - "ראשון"
+    - "שני"
+    - "שלישי"
+    - "רביעי"
+    - "חמישי"
+    - "שישי"
+    - "שבת"
+  english:
+    - "sunday"
+    - "monday"
+    - "tuesday"
+    - "wednesday"
+    - "thursday"
+    - "friday"
+    - "saturday"
+types.colors:
+  hebrew:
+    - "לבן"
+    - "כחול"
+    - "אדום"
+    - "ירוק"
+    - "שחור"
+  english:
+    - "white"
+    - "blue"
+    - "red"
+    - "green"
+    - "black"
+# Help
+types.help_subcommands:
+  english:
+    - "general"
+    - "language"
+    - "filters"
+    - "mentions"
+    - "birthdays"
+    - "reminders"
+    - "permissions"
+    - "stickers"
+    - "internet"
+    - "admin"
+    - "other"
+  hebrew:
+    - "כללי"
+    - "שפה"
+    - "פילטרים"
+    - "תיוגים"
+    - "ימי הולדת"
+    - "תזכורות"
+    - "הרשאות"
+    - "סטיקרים"
+    - "אינטרנט"
+    - "אדמין"
+    - "אחר"
+# Permissions
+types.permissions:
+  english:
+    - "filters"
+    - "tags"
+    - "handle_Filters"
+    - "handle_Tags"
+    - "handle_Reminders"
+    - "handle_Birthdays"
+    - "handle_Shows"
+    - "handle_Other"
+  hebrew:
+    - פילטרים
+    - תיוגים
+    - פקודותפילטרים
+    - פקודותתיוגים
+    - פקודותתזכורות
+    - פקודותימיהולדת
+    - פקודותהראה
+    - פקודותשונות
+types.permission_levels:
+  english:
+    - "admin"
+    - "regular"
+    - "muted"
+  hebrew:
+    - "מנהל"
+    - "רגיל"
+    - "מושתק"
+# Stickers
+types.sticker_crop_options:
+  english:
+    no_crop: "no crop"
+  hebrew:
+    no_crop: "ללא חיתוך"
+types.sticker_quality:
+  english:
+    high: "high quality"
+    medium: "medium quality"
+  hebrew:
+    high: "איכות גבוהה"
+    medium: "איכות בינונית"
+# Tags
+types.tag_special_groups:
+  english: "everyone"
+  hebrew: "כולם"
+
+#####################
+### BOT RESPONSES ###
+#####################
+### BOT ###
+bot.new_message:
+  english: "New message from Bot"
+  hebrew: "הודעה חדשה מהבוט"
+
+### ERRORS ###
+errors.general_error:
+  english:
+    title: "Error"
+    body: "Please try again."
+  hebrew:
+    title: "קרתה שגיאה"
+    body: "נסה שוב"
+errors.bot_logic_error:
+  english:
+    title: "Bot logic error"
+    body: "Sadly, I could not find an appropriate response for your request."
+  hebrew:
+    title: "שגיאה לוגית בבוט"
+    body: "לצערי, לא הצלחתי למצוא תגובה טובה לבקשתך."
+
+# Types
+errors.invalid_toggle_state:
+  english: "Invalid state. Either 'on' or 'off'"
+  hebrew: "מצב לא קיים. השתמש ב-'פועל' או 'כבוי'"
+
+# Help
+errors.help_page_not_found:
+  english: "No help page for that. Please try again or type 'help' to see general help information"
+  hebrew: "לא קיים דף עזרה עבור מה שבחרת. אנא נסה שנית או כתוב 'עזרה' על מנת לקבל עזרה כללית."
+errors.command_does_not_exist:
+  english:
+    title: "No such command exists."
+    body: "Please try again or type 'help' to see the list of commands."
+  hebrew:
+    title: "פקודה זו לא קיימת."
+    body: "אנא נסה שנית או כתוב 'עזרה' כדי לקבל את רשימת הפקודות."
+
+### HELP ###
+help.general_message:
+  english: "General Help"
+  hebrew: "עזרה כללית"
+help.language_message:
+  english: |-
+    Change language to [language] - changes the language the bot receives and sends messages in.
+    For example: Change language to Hebrew.
+    This command can be used at all times in every language.
+    Languages currently supported: Hebrew, English, French.
+    Help [-|language|filters|tags|birthdays|permissions|reminders|stickers|internet|others] - shows the various help messages, which in total list all the commands (except those available only to bot devs).
+  hebrew: |-
+    עזרה - שפה
+
+language.language_changed_to:
+  english: "Language changed to {language}"
+  hebrew: "שפה שונתה ל{language}"
