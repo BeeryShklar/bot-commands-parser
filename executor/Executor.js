@@ -36,7 +36,10 @@ export class Executor {
 
 		const classID = req['class_id']
 		const executor = this.executors[classID]
-		if (!executor) bot.error(chat)
+		if (!executor)
+			return bot.error(chat, req, {
+				body: 'No executor for command', // TODO: add this message in the dictionary
+			})
 		executor.execute(req, chat, bot)
 	}
 }
