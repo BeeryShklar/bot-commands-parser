@@ -20,26 +20,31 @@ export class Executor {
 	 * @param {import('arcsecond').ParserState} parseTree parsed command tree
 	 * @param {Chat} user
 	 * @param {Bot} bot the bot controller
+	 * @typedef {{ignoreCommandIDErrors: boolean}} ExecuteOptions
+	 * @param {ExecuteOptions} options
 	 * @returns {void}
 	 */
-	execute(parseTree, chat, bot) {
-		const { result: req } = parseTree
+	execute(parseTree, req, chat, bot, options) {
+		const { result: parsed } = parseTree
 
-		if (parseTree.isError)
-			return bot.error(chat, bot, {
+		if (parseTree.isError) {
+			if (parseTree.index < 1 && options.ignoreCommandIDErrors) return false
+			console.log('----- ERROR -----')
+			return bot.error(req, chat, parsed, {
 				title: `Couldn't parse input at position ${color(
 					parseTree.index,
 					'brown'
 				)}`,
 				body: parseTree.error,
 			})
+		}
 
-		const classID = req['class_id']
+		const classID = parsed['class_id']
 		const executor = this.executors[classID]
 		if (!executor)
-			return bot.error(chat, req, {
+			return bot.error(req, chat, parsed, {
 				body: 'No executor for command', // TODO: add this message in the dictionary
 			})
-		executor.execute(req, chat, bot)
+		executor.execute(parsed, req, chat, bot)
 	}
 }

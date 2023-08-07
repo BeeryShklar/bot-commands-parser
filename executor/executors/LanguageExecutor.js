@@ -10,14 +10,14 @@ import { Executor } from '../Executor.js'
 export class LanguageExecutor {
 	/**
 	 *
-	 * @param {*} req
+	 * @param {*} parsed
 	 * @param {Chat} chat
 	 * @param {Bot} bot
 	 */
-	execute(req, chat, bot) {
-		switch (req.id) {
+	execute(parsed, req, chat, bot) {
+		switch (parsed.id) {
 			case 'change_language':
-				const newLang = req.data.language
+				const newLang = parsed.data.language
 
 				/// START OF STUPID CODE SECTION ///
 				// Recalculate the name of the language changed to in the current language
@@ -36,7 +36,7 @@ export class LanguageExecutor {
 				/// END OF STUPID CODE SECTION (hopefully) ///
 
 				chat.language = newLang.id
-				bot.respond(chat, req, {
+				bot.respond(req, chat, parsed, {
 					byID: 'language.language_changed_to',
 					params: {
 						language: newLangName,

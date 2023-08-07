@@ -12,9 +12,10 @@ export class HelpExecutor {
 	 * @param {*} user
 	 * @param {Bot} bot
 	 */
-	execute(req, chat, bot) {
-		const { subcmd } = req.data
-		if (!subcmd) bot.respond(chat, req, { byID: 'help.general_message' })
-		else bot.respond(chat, req, { byID: `help.${subcmd.id}_message` })
+	execute(parsed, req, chat, bot) {
+		const { subcmd } = parsed.data
+		if (!subcmd)
+			bot.respond(req, chat, parsed, { byID: 'help.general_message' })
+		else bot.respond(req, chat, parsed, { byID: `help.${subcmd.id}_message` })
 	}
 }

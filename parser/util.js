@@ -122,9 +122,10 @@ export const command = ({ id, text, contentParser }, groupID = null) => {
 	// 	text instanceof Array ? choice(text.map(x => str(x))) : str(text)
 	const cmdNameParser = getMultiLanguageChoice(`commands.${id}`, text, true)
 	const p = sequenceOf([
+		optionalWhitespace,
 		cmdNameParser,
 		contentParser ?? optionalWhitespace.map(x => null),
-	]).map(([{ text, language }, data]) => ({
+	]).map(([_, { text, language }, data]) => ({
 		id,
 		text,
 		language,
