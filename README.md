@@ -8,10 +8,10 @@ Copy everything in [ArielYat/Whatsapp-bot-Project](https://github.com/ArielYat/W
 
 ## Roadmap to Success
 
-[x] Be better than them in parsing input
-[ ] Be better than them in executing input
-[ ] Have a working bot
-[ ] Add more steps
+- [x] Be better than them in parsing input
+- [ ] Be better than them in executing input
+- [ ] Have a working bot
+- [ ] Add more steps
 
 ## Our Sponsors
 
